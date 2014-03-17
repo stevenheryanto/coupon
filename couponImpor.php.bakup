@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Coupon Import</title>
+</head>
+<body> 
+<?php
+	
+	//define('CSV_PATH','D:/Document/Dibiakcom/Coupon/');
+	//echo "Haro";
+	$csv_file = "premium.csv"; 
+	//echo $csv_file;
+	$csvfile = fopen($csv_file, 'r');
+	$theData = fgets($csvfile);
+	if($csvfile == null){
+		echo "null";
+	} else {
+		echo "ada kok";
+	}
+	$i = 0;
+	require_once 'meekrodb.2.1.class.php';
+	
+	while(!feof($csvfile)) {
+		$csv_data[] = fgets($csvfile);
+		$csv_array = explode(";", $csv_data[$i]);
+		//$insert_csv = array();
+		//$code = $csv_array[0];
+		//echo $csv_array[6];
+		//echo "wkwk";
+		
+		$code = $csv_array[6];
+		$lembar = $csv_array[7];
+		$company = $csv_array[3];	
+		$amount = $csv_array[4];
+		$published = $csv_array[0];
+		$j = 0;
+		
+		while($j != $lembar){
+			DB::insert('premium', array(
+			'code' => $code,
+			'amount' => $amount,
+			'company' => $company,
+			'published' => $published,
+			));
+			echo $code;
+			$code = $code - 1;
+			//echo $j;
+			$j++;
+		}
+		$i++;
+	}
+	echo "---" ;
+	fclose($csvfile);
+
+?>
+</body>
+</html>

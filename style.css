@@ -1,0 +1,73 @@
+@font-face{font-family:"sintony";font-style:normal;font-weight:normal;src:url("http://ds.dibiakcom.net/font/sintony/Sintony-Regular.ttf")format("truetype");}
+@font-face{font-family:"fontawesome";font-style:normal;font-weight:normal;src:url("http://ds.dibiakcom.net/font/awesome/fontawesome-webfont.eot")format("eot"),url("http://ds.dibiakcom.net/font/awesome/fontawesome-webfont.woff")format("woff"),url("http://ds.dibiakcom.net/font/awesome/fontawesome-webfont.svg")format("svg"),url("http://ds.dibiakcom.net/font/awesome/fontawesome-webfont.ttf")format("truetype");}
+
+* { margin: 0 0 0 4%; padding: 0; list-style-type: none; font-family: fontawesome;}
+body { line-height: 20px; font-size: 16px;}
+br { clear: left; }
+i li {display: none}
+
+label {
+	display: block;
+	width: 150px;
+	float: left;
+	margin: 0px 4px 2px 2px;
+	text-align: right;
+}
+input, select {
+	margin: 0px 2px 2px 4px;
+	font-size: 1em;
+	border: 1px solid #006;
+	background: #ffc;
+}
+input[type=date]{
+	font-size: 0.85em;
+}
+input:hover, select:hover {
+	border: 1px solid #f00;
+	background: #ff6;
+}
+.group:after {content:"";display:table;clear:both;}
+.hidden { display: none; }
+.button {
+	border: 1px solid #006;
+	background: #ccf;
+	width: 50px;
+	text-align: center;
+}
+.button:hover {
+	border: 1px solid #f00;
+	background: #eef;
+}
+#bottom {
+	position: fixed;
+	width: 21%;
+	left: 70%;
+	bottom: 30px;
+	margin-bottom:-30px;
+}
+
+.drag {
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+	-khtml-user-drag: element;
+	-webkit-user-drag: element;
+}
+		
+#drop {
+	min-height: 100px;
+	width: 200px;
+	border: 3px dashed #ccc;
+	margin: 10px;
+	padding: 10px;
+	clear: left;
+}
+
+#fl_table { font-size: 1em; width:90%; position: relative }
+#fl_table a { font-size: .9em; }
+#fl_table li { clear:both; padding: 3px; margin: 2px;  }
+#fl_table li div { float: left; display: block; width: 10%; }
+#fl_table li div.low { width: 20%; text-align: center }
+#fl_table li div.hi { width: 25%; text-align: left }
+#fl_table li { clear: both; position: relative}
